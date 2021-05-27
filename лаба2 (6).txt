@@ -1,0 +1,288 @@
+package lab;
+
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
+
+import javax.xml.transform.TransformerException;
+//47
+/*Створіть просту  ієрархію спадкування, яка відповідає сутностям Рослина 
+ * (властивості- назва, ареал розповсюдження, вік) 
+ * та Дерева і Квіти. Продемонструйте перевантаження
+ *  конструкторів та методів, перевизначення методів,
+ *   особливості роботи конструкторів при спадкуванні.*/
+class Plant{
+   public String name;
+   public String whereGrow;
+   public int years;
+   
+   public Plant(String name,String whereGrow) {
+	   this.name=name;
+	   this.whereGrow=whereGrow;
+	   
+   }
+   public Plant(String name,String whereGrow,int years) {
+	   this.name=name;
+	   this.whereGrow=whereGrow;
+	   this.years=years;
+	   
+   }
+   public void PrintPlant() {
+	   System.out.printf("Name %s \n", name);
+	   System.out.printf("whereGrow %s \n", whereGrow);
+	   System.out.printf("Years %s \n", years);
+   }
+   
+   
+   
+       String typeOfplant;
+       String condition;
+       
+   public  void  Findingplant (String name){
+	   switch (name) {
+	   case "Oak":
+	   typeOfplant = "Tree";
+	   break;
+	   case "Apricot":
+		   typeOfplant = "Tree";
+		   break;
+	   case "Plum":
+		   typeOfplant = "Tree";
+		   break;
+	   case "Apple":
+		   typeOfplant = "Tree";
+		   break;
+	   case "Roze":
+		   typeOfplant = "Flower";
+		   break;
+	   case "Chamomile":
+		   typeOfplant = "Flower";
+		   break;
+	   
+	   }
+	   System.out.println(typeOfplant);
+   }
+   
+   public void Findingplant(String name, int years) {
+	   switch (name) {
+	   case "Oak":
+	   typeOfplant = "Tree";
+	   break;
+	   case "Apricot":
+		   typeOfplant = "Tree";
+		   break;
+	   case "Plum":
+		   typeOfplant = "Tree";
+		   break;
+	   case "Apple":
+		   typeOfplant = "Tree";
+		   break;
+	   case "Roze":
+		   typeOfplant = "Flower";
+		   break;
+	   case "Chamomile":
+		   typeOfplant = "Flower";
+		   break;
+	   
+	   }
+	   System.out.println(typeOfplant);
+	   switch (years) {
+	   case 1:
+		   condition = "young";
+	   break;
+	   case 2:
+		   condition = "young";
+		   break;
+	   case 3:
+		   condition = "adult";
+		   break;
+	   case 4:
+		   condition = "adult";
+		   break;
+	   case 5:
+		   condition = "old";
+		   break;
+	   case 6:
+		   condition = "old";
+		   break;
+	   
+	   }
+	   System.out.println(condition);
+   }
+  
+
+}
+class Trees extends Plant{
+	String fruit;
+	float growth;
+
+	public Trees(String name, String whereGrow, int years) {
+		super(name, whereGrow, years);
+	}
+	public Trees(String name, String whereGrow, int years,String fruit,float growth) {
+		super(name, whereGrow, years);
+		this.fruit=fruit;
+		this.growth=growth;
+	}
+	
+	@Override
+	public void PrintPlant() {
+	/*System.out.printf("Name %s \n", name);
+    System.out.printf("whereGrow %s \n", whereGrow);
+	System.out.printf("Years %s \n", years);*/
+	super.PrintPlant();	
+	System.out.printf("Fruit %s \n", fruit);
+	System.out.printf("Growth %s \n ",growth);
+	}
+
+	
+}
+class Flowers extends Plant{
+
+	String color;
+	int numberOfBubs;
+	
+	public Flowers(String name, String whereGrow, int years) {
+		super(name, whereGrow, years);
+	}
+	public Flowers(String name, String whereGrow, int years,String color, int numberOfBubs) {
+		super(name, whereGrow, years);
+		this.color=color;
+		this.numberOfBubs=numberOfBubs;
+	}
+	
+	@Override
+	public void PrintPlant() {
+    	/*System.out.printf("Name %s \n", name);
+	    System.out.printf("whereGrow %s \n", whereGrow);
+		System.out.printf("Years %s \n", years);*/
+		super.PrintPlant();
+		System.out.printf("Color %s \n", color);
+		System.out.printf("Number Of Bubs %s \n ",numberOfBubs);
+		}
+	
+	
+}
+
+
+//39
+/*Продемонструйте у коді  2 способа  обробки виключних ситуацій у методі 
+ * (з try-catch и  throws), а також особливості використання блока 
+ * finally. У якості обробляємо виключення оберіть будь яке =checked= виключення.*/
+
+public class test {
+	public static void Sum(int n) {
+		
+	    
+		int sum = 0;
+		while(n != 0){
+		        sum += (n % 10);
+		        n/=10;
+		}
+		
+		System.out.println(sum);
+		
+		}
+	
+	
+	public static void Transformer() throws TransformerException{
+		System.out.println(" в теле метода");
+		throw new  TransformerException("демонстрация");
+	}
+ 
+	       
+	public static void main (String[] args) {
+		//47
+		Trees tree= new Trees("Oak","Ukraine",15);
+		tree.Findingplant("Oak");
+		tree.PrintPlant();
+		Flowers flower = new Flowers("Roze","Ukraine",1,"Red",15);
+		flower.PrintPlant();
+		
+	
+	
+		
+		
+		
+		//39
+		try {
+		Scanner input = new Scanner(System.in);
+	    System.out.print("Input number 1 for sum: ");
+	    int n = input.nextInt();
+		Sum(n);
+		
+		}
+		catch(InputMismatchException e1) {
+			System.out.print("Нужно вводить числа !!!!");
+			
+		}
+		finally {
+			System.out.println("finally");
+			int n = 152;
+			Sum(n);
+		}
+		
+		try {
+		Transformer();	
+		}
+		
+		catch(TransformerException e2) {
+			System.out.println( "Перехвачено: " +  e2 );		
+	}
+		//41
+		/*Створіть код, у якому генеруються слідуючі типи виключень  ArrayIndexOutOfBoundsException,
+		 *  ArithmeticException, NullPointerException, IndexOutOfBoundsException, Exception.*/  
+	
+		// использивание вложеных блоков try
+		try {
+			 //ArithmeticException
+			int a,b;
+			b=0;
+			a= 5/b;
+			System.out.println(a);
+			
+			try { 
+				// ArrayIndexOutOfBoundsException 
+			    Random random = new Random();
+			    int [] arr = new int[10];
+			    for (int i = 0; i < arr.length; i++) {
+			       arr[i] =  random.nextInt(10);
+			       System.out.println(arr[i]);
+			    }
+			    System.out.println("_________");
+			    System.out.println(arr[10]); 
+			}
+			catch(ArrayIndexOutOfBoundsException e8) {
+				System.out.println("Нельзя обращаться к масиву индексом который равен или больше его размера ");
+			}
+			}
+			catch(ArithmeticException е5) {
+				System.out.println("Делить на ноль нельзя!!!!");
+			}
+		
+		//NullPointerException
+		try {
+			throw new NullPointerException ();
+		}
+		catch(NullPointerException e) {
+			System.out.println("Исключение NullPointerException обработано ");
+		}
+		//IndexOutOfBoundsException
+		try {
+			String str1=new String("laptop");
+		
+		  System.out.print("Найденный индекс: ");
+	      System.out.println(str1.charAt(9));
+		}
+		catch(IndexOutOfBoundsException e) {
+			System.out.println("IndexOutOfBoundsException");
+		}
+		//Exception
+		catch(Exception e) {
+			
+		}
+		
+	}
+}	
+		
+	
