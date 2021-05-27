@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 import javax.xml.transform.TransformerException;
 //47
-/*Створіть просту  ієрархію спадкування, яка відповідає сутностям Рослина 
- * (властивості- назва, ареал розповсюдження, вік) 
- * та Дерева і Квіти. Продемонструйте перевантаження
- *  конструкторів та методів, перевизначення методів,
- *   особливості роботи конструкторів при спадкуванні.*/
+/*РЎС‚РІРѕСЂС–С‚СЊ РїСЂРѕСЃС‚Сѓ  С–С”СЂР°СЂС…С–СЋ СЃРїР°РґРєСѓРІР°РЅРЅСЏ, СЏРєР° РІС–РґРїРѕРІС–РґР°С” СЃСѓС‚РЅРѕСЃС‚СЏРј Р РѕСЃР»РёРЅР° 
+ * (РІР»Р°СЃС‚РёРІРѕСЃС‚С–- РЅР°Р·РІР°, Р°СЂРµР°Р» СЂРѕР·РїРѕРІСЃСЋРґР¶РµРЅРЅСЏ, РІС–Рє) 
+ * С‚Р° Р”РµСЂРµРІР° С– РљРІС–С‚Рё. РџСЂРѕРґРµРјРѕРЅСЃС‚СЂСѓР№С‚Рµ РїРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ
+ *  РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС–РІ С‚Р° РјРµС‚РѕРґС–РІ, РїРµСЂРµРІРёР·РЅР°С‡РµРЅРЅСЏ РјРµС‚РѕРґС–РІ,
+ *   РѕСЃРѕР±Р»РёРІРѕСЃС‚С– СЂРѕР±РѕС‚Рё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС–РІ РїСЂРё СЃРїР°РґРєСѓРІР°РЅРЅС–.*/
 class Plant{
    public String name;
    public String whereGrow;
@@ -166,9 +166,9 @@ class Flowers extends Plant{
 
 
 //39
-/*Продемонструйте у коді  2 способа  обробки виключних ситуацій у методі 
- * (з try-catch и  throws), а також особливості використання блока 
- * finally. У якості обробляємо виключення оберіть будь яке =checked= виключення.*/
+/*РџСЂРѕРґРµРјРѕРЅСЃС‚СЂСѓР№С‚Рµ Сѓ РєРѕРґС–  2 СЃРїРѕСЃРѕР±Р°  РѕР±СЂРѕР±РєРё РІРёРєР»СЋС‡РЅРёС… СЃРёС‚СѓР°С†С–Р№ Сѓ РјРµС‚РѕРґС– 
+ * (Р· try-catch Рё  throws), Р° С‚Р°РєРѕР¶ РѕСЃРѕР±Р»РёРІРѕСЃС‚С– РІРёРєРѕСЂРёСЃС‚Р°РЅРЅСЏ Р±Р»РѕРєР° 
+ * finally. РЈ СЏРєРѕСЃС‚С– РѕР±СЂРѕР±Р»СЏС”РјРѕ РІРёРєР»СЋС‡РµРЅРЅСЏ РѕР±РµСЂС–С‚СЊ Р±СѓРґСЊ СЏРєРµ =checked= РІРёРєР»СЋС‡РµРЅРЅСЏ.*/
 
 public class test {
 	public static void Sum(int n) {
@@ -186,8 +186,8 @@ public class test {
 	
 	
 	public static void Transformer() throws TransformerException{
-		System.out.println(" в теле метода");
-		throw new  TransformerException("демонстрация");
+		System.out.println("РІ С‚РµР»Рµ РјРµС‚РѕРґР°");
+		throw new  TransformerException("РґРµРјРѕРЅСЃС‚СЂР°С†РёСЏ");
 	}
  
 	       
@@ -213,7 +213,7 @@ public class test {
 		
 		}
 		catch(InputMismatchException e1) {
-			System.out.print("Нужно вводить числа !!!!");
+			System.out.print("РќСѓР¶РЅРѕ РІРІРѕРґРёС‚СЊ С‡РёСЃР»Р° !!!!");
 			
 		}
 		finally {
@@ -227,13 +227,12 @@ public class test {
 		}
 		
 		catch(TransformerException e2) {
-			System.out.println( "Перехвачено: " +  e2 );		
+			System.out.println( "РџРµСЂРµС…РІР°С‡РµРЅРѕ: " +  e2 );		
 	}
 		//41
-		/*Створіть код, у якому генеруються слідуючі типи виключень  ArrayIndexOutOfBoundsException,
+		/*РЎС‚РІРѕСЂС–С‚СЊ РєРѕРґ, Сѓ СЏРєРѕРјСѓ РіРµРЅРµСЂСѓСЋС‚СЊСЃСЏ СЃР»С–РґСѓСЋС‡С– С‚РёРїРё РІРёРєР»СЋС‡РµРЅСЊ  ArrayIndexOutOfBoundsException,
 		 *  ArithmeticException, NullPointerException, IndexOutOfBoundsException, Exception.*/  
-	
-		// использивание вложеных блоков try
+		// РёСЃРїРѕР»СЊР·РёРІР°РЅРёРµ РІР»РѕР¶РµРЅС‹С… Р±Р»РѕРєРѕРІ try
 		try {
 			 //ArithmeticException
 			int a,b;
@@ -253,11 +252,11 @@ public class test {
 			    System.out.println(arr[10]); 
 			}
 			catch(ArrayIndexOutOfBoundsException e8) {
-				System.out.println("Нельзя обращаться к масиву индексом который равен или больше его размера ");
+				System.out.println("РќРµР»СЊР·СЏ РѕР±СЂР°С‰Р°С‚СЊСЃСЏ Рє РјР°СЃРёРІСѓ РёРЅРґРµРєСЃРѕРј РєРѕС‚РѕСЂС‹Р№ СЂР°РІРµРЅ РёР»Рё Р±РѕР»СЊС€Рµ РµРіРѕ СЂР°Р·РјРµСЂР° ");
 			}
 			}
-			catch(ArithmeticException е5) {
-				System.out.println("Делить на ноль нельзя!!!!");
+			catch(ArithmeticException ГҐ5) {
+				System.out.println("Р”РµР»РёС‚СЊ РЅР° РЅРѕР»СЊ РЅРµР»СЊР·СЏ!!!!");
 			}
 		
 		//NullPointerException
@@ -265,13 +264,13 @@ public class test {
 			throw new NullPointerException ();
 		}
 		catch(NullPointerException e) {
-			System.out.println("Исключение NullPointerException обработано ");
+			System.out.println(" РСЃРєР»СЋС‡РµРЅРёРµ NullPointerException РѕР±СЂР°Р±РѕС‚Р°РЅРѕ ");
 		}
 		//IndexOutOfBoundsException
 		try {
 			String str1=new String("laptop");
 		
-		  System.out.print("Найденный индекс: ");
+		  System.out.print("РќР°Р№РґРµРЅРЅС‹Р№ РёРЅРґРµРєСЃ: ");
 	      System.out.println(str1.charAt(9));
 		}
 		catch(IndexOutOfBoundsException e) {
